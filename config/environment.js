@@ -21,12 +21,22 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-cli-auth0-lock'] = {
+
+  // [required] Auth0 credentials
+  cid: 'aKBHYmEpadufVFzRJVhsd5j2dkougx0D',
+  domain: 'makapen-tyler.auth0.com',
+
+  cdnUrl: 'https://cdn.auth0.com/'
+
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {

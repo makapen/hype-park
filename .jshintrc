@@ -2,7 +2,10 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "Firebase",
+    "Auth0Lock",
+    "Auth0"
   ],
   "browser": true,
   "boss": true,
