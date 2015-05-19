@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'starter-app-client',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
-    firebase: 'https://YOUR-FIREBASE-NAME.firebaseio.com/',
+    firebase: 'https://makapen-starter.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

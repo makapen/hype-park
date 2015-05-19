@@ -1,7 +1,7 @@
 {
   "name": "starter-app-client",
   "version": "0.0.0",
-  "description": "Small description for starter-app-client goes here",
+  "description": "Starter app to setup authorization, firebase",
   "private": true,
   "directories": {
     "doc": "doc",
