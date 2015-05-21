@@ -21,6 +21,14 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth'] = {
+    authenticationRoute: 'login',
+    routeAfterAuthentication: 'index',
+    // routeIfAlreadyAuthenticated: 'orders',
+    crossOriginWhitelist: [],
+    authorizer: 'authorizer:auth0',
+  };
+
   ENV['ember-cli-auth0-lock'] = {
 
   // [required] Auth0 credentials

@@ -75,7 +75,6 @@ export default Base.extend({
     options = options || {};
     return this.getAuth0Token(options.setupCallback, options.existingToken)
       .then(function(auth0Session) {
-        Ember.Logger.log('session', auth0Session)
         return this.getFirebaseToken(auth0Session.token)
           .then(function(firebaseSession) {
             Ember.Logger.log('big ol object', {

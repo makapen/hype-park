@@ -1,0 +1,6 @@
+{{#if session.isAuthenticated}}
+  <div>Welcome</div>
+{{else}}
+  <button {{action 'signUp'}}>Sign up</button>
+  <button {{action 'logIn'}}>Log In</button>
+{{/if}}

@@ -5,7 +5,7 @@ import Ember from 'ember';
 export default ApplicationAdapter.extend({
   find: function(store, type, id) {
     var self = this;
-    Ember.Logger.log('id', id)
+
     var options = {
       id_token: id, // The id_token you have now
       targetClientId: config['ember-cli-auth0-lock'].cid,
@@ -16,7 +16,6 @@ export default ApplicationAdapter.extend({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       self.get('auth0')
       .getDelegationToken(options, function(err, delegationResult) {
-        Ember.Logger.log('dele', delegationResult)
         if (err) {
           return reject(new Error(err));
         }
