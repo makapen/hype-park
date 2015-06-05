@@ -7,6 +7,7 @@ export default Auth0Authenticator.extend({
 
       return new Ember.RSVP.Promise(function(resolve, reject) {
         var isComplete = false;
+        var profile;
         var auth0Lock = self.get('auth0Lock').showSignup(function(err, profile, token) {
           if (err) {
             //don't fail on duplicate account or other issues
@@ -14,6 +15,7 @@ export default Auth0Authenticator.extend({
           }
           isComplete = true;
 
+          profile = profile;
           resolve({
             token: token,
             profile: profile

@@ -1,4 +1,6 @@
 /* jshint node: true */
+var deployTarget = process.env.deployTarget || 'local';
+var deployTargetConfig = require('./' + deployTarget + '.json');
 
 module.exports = function(environment) {
   var ENV = {
@@ -18,6 +20,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      apiServer: {
+        protocol: deployTargetConfig.apiServer.protocol,
+        host: deployTargetConfig.apiServer.host
+      }
     }
   };
 
@@ -42,7 +48,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
   }

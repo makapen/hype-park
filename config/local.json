@@ -1,0 +1,10 @@
+{
+  "apiServer": {
+    "protocol": "http://",
+    "host": "localhost:3000"
+  },
+
+  "firebaseServer": {
+    "host": "https://makapen-starter.firebaseio.com"
+  }
+}

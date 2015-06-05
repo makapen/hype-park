@@ -3,20 +3,17 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-  beforeModel: function(transition) {
-    if (this.get('session.isAuthenticated')) {
-      transition.abort();
-      this.get('session').set('afterLogoutRedirect', window.location.href);
-      this.get('session').invalidate();
-      return;
-    }
-  },
-
   onAuthenticationPromise: function() {
     if (this.get('authenticationPromise')) {
       this.get('authenticationPromise').then(function() {
-          this.set('authenticationPromise', null);
-          this.transitionTo('index');
+          var userId = this.get('session.content.secure.auth0Profile.firebase_data.user_id').split('|')[1];
+          this.setProperties({
+            'authenticationPromise': null,
+            'session.user': userId
+          });
+          // now persist to auth0 and firebase with user id
+
+          this.transitionTo('sign-up.details');
         }.bind(this))
         .catch(function(err) {
           Ember.Logger.log('error authenticate', err)
@@ -58,7 +55,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       var self = this;
 
       if (this.session.get('isAuthenticated')) {
-        self.send('activate');
         return;
       }
 
@@ -68,7 +64,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
             Ember.Logger.log('callback auth0lock', auth0Lock);
             this.set('lock', auth0Lock);
           }.bind(this)
-        });
+        })
 
       this.get('session').set('auth0Active', true);
 

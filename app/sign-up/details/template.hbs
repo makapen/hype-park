@@ -1,1 +1,6 @@
-{{outlet}}
+<div>Info</div>
+<form {{action 'submitDetails'}}>
+  <label>first name</label>
+  {{input value=model.firstName placeholder='first name'}}
+  <button type='submit'>Submit</button>
+</form>
