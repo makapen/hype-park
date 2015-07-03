@@ -17,6 +17,7 @@
     "auth0.js": "~6.4.2"
   },
   "devDependencies": {
-    "bootstrap-sass": "~3.3.5"
+    "bootstrap-sass": "~3.3.5",
+    "font-awesome": "~4.3.0"
   }
 }
