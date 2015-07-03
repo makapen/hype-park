@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('review-parking-details');
   this.route('pay');
   this.route('parking-map');
+  this.route('create-or-login');
 });
 
 export default Router;
