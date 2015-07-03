@@ -1,6 +1,8 @@
 {{#if session.isAuthenticated}}
+  <div class='row'></div>
   <div>Welcome</div>
 {{else}}
+  <div class='row'>row</div>
   <button {{action 'signUp'}}>Sign up</button>
   <button {{action 'logIn'}}>Log In</button>
 {{/if}}

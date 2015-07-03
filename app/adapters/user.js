@@ -2,7 +2,7 @@ import Ember from 'ember';
 import UtilityServerAdapter from './utility-server-adapter';
 
 export default UtilityServerAdapter.extend({
-  find: function(store, type, id) {
+  findRecord: function(store, type, id) {
     var auth0 = this.get('auth0'),
     useAuth0 = id.split('/')[0] === 'current';
 

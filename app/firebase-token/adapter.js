@@ -3,7 +3,7 @@ import config from '../config/environment';
 import Ember from 'ember';
 
 export default ApplicationAdapter.extend({
-  find: function(store, type, id) {
+  findRecord: function(store, type, id) {
     var self = this;
 
     var options = {

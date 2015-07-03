@@ -6,7 +6,7 @@ var auth0Config = config['ember-cli-auth0-lock'];
 
 export default Base.extend({
   getFirebaseToken: function(auth0Token) {
-    return this.store.find('firebase-token', auth0Token).then(function(firebaseToken) {
+    return this.store.findRecord('firebase-token', auth0Token).then(function(firebaseToken) {
       return firebaseToken.serialize();
     });
   },

@@ -4,8 +4,8 @@ import Auth0TokenAuthenticator from '../utils/auth0-token-authenticator';
 import Auth0Authorizer from '../utils/auth0-authorizer';
 
 export function initialize(container, application) {
-  application.inject('authenticator', 'store', 'store:main');
-  application.inject('authorizer', 'store', 'store:main');
+  application.inject('authenticator', 'store', 'service:store');
+  application.inject('authorizer', 'store', 'service:store');
 
   container.register('authenticator:auth0', Auth0Authenticator);
   container.register('authenticator:auth0-signup', Auth0SignupAuthenticator);

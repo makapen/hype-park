@@ -4,10 +4,12 @@ var deployTargetConfig = require('./' + deployTarget + '.json');
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'starter-app-client',
+    modulePrefix: 'hype-park',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
-    firebase: 'https://makapen-starter.firebaseio.com/',
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com https://hype-park.auth0.com" 
+    },
+    firebase: 'https://hype-park.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -38,8 +40,8 @@ module.exports = function(environment) {
   ENV['ember-cli-auth0-lock'] = {
 
   // [required] Auth0 credentials
-  cid: 'aKBHYmEpadufVFzRJVhsd5j2dkougx0D',
-  domain: 'makapen-tyler.auth0.com',
+  cid: '8qZq3onkqMlG83YQQBxFq75SzZ7V3qPm',
+  domain: 'hype-park.auth0.com',
 
   cdnUrl: 'https://cdn.auth0.com/'
 

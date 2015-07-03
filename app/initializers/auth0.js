@@ -3,8 +3,8 @@ import config from '../config/environment';
 var auth0Config = config['ember-cli-auth0-lock'];
 
 var auth0 = new Auth0({
-  domain:       'makapen-tyler.auth0.com', //auth0Config.domain,
-  clientID:     'aKBHYmEpadufVFzRJVhsd5j2dkougx0D'//auth0Config.cid
+  domain:       auth0Config.domain,
+  clientID:     auth0Config.cid
 });
 
 export function initialize(container, application) {
