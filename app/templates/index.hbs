@@ -1,8 +1,7 @@
-{{#if session.isAuthenticated}}
-  <div class='row'></div>
-  <div>Welcome</div>
-{{else}}
-  <div class='row'>row</div>
-  <button {{action 'signUp'}}>Sign up</button>
-  <button {{action 'logIn'}}>Log In</button>
-{{/if}}
+
+
+<div class="form-group">
+  <label for="address">Address</label>
+  <input type="text" class="form-control" id="address" placeholder="Address">
+</div>
+<button class='btn btn-default' {{action 'submitAddress'}}>submit</button>
