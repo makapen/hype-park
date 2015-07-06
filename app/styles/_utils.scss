@@ -1,0 +1,27 @@
+.margin-center {
+ margin: 0 auto;
+}
+
+.circle {
+  @extend .text-center;
+  @extend .margin-center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  > i {
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+  }
+}
+
+.circle-red {
+  @extend .circle;
+  border: 1px solid red;
+}
+
+.circle-blue {
+  @extend .circle;
+  border: 1px solid blue;
+}

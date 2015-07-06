@@ -2,5 +2,5 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   firstName: DS.attr('string'),
-  users: DS.hasMany('user', {async: true})
+  parkingSpots: DS.hasMany('parking-spot', { async: true})
 });
