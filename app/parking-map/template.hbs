@@ -1,1 +1,22 @@
-<button {{action 'spotSelected'}}>Selected item</button>
+  <div class='row'>
+    <div class='col-xs-12 col-md-3'>
+      <ol class="list-group">
+        <li class="list-group-item">
+          1st and Jackson
+          <span {{action 'spotSelected'}} class='pull-right'><i class='fa fa-car'></i></span>
+        </li>
+        <li class="list-group-item">
+          2nd and Yesler
+          <span {{action 'spotSelected'}} class='pull-right'><i class='fa fa-car'></i></span>
+
+        </li>
+        <li class="list-group-item">
+          3rd and James
+          <span {{action 'spotSelected'}} class='pull-right'><i class='fa fa-car'></i></span>
+        </li>
+      </ol>
+    </div>
+    <div class='col-xs-12 col-md-9'>
+      <img class='parking-map' alt='Parking Map'>
+    </div>
+  </div>
