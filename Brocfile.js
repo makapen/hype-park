@@ -1,7 +1,7 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    pickFiles = require('broccoli-static-compiler'),
+    Funnel = require('broccoli-funnel'),
     mergeTrees = require('broccoli-merge-trees');
 
 var app = new EmberApp({
@@ -12,20 +12,21 @@ var app = new EmberApp({
   }
 });
 
+app.import('bower_components/moment/min/moment.min.js');
 app.import('bower_components/auth0.js/build/auth0.js');
 app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js');
+app.import('bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js');
 
-var glyphFontTree = pickFiles('bower_components/bootstrap-sass/assets/fonts/bootstrap', {
+var glyphFontTree = new Funnel('bower_components/bootstrap-sass/assets/fonts/bootstrap', {
   srcDir: '/',
-  files: ['*'],
-  destDir: '/fonts/bootstrap'
+  include: ['**/*.woff', '**/stylesheet.css'],
+  destDir: 'fonts/bootstrap'
 });
 
-
-var fontAwesomeTree = pickFiles('bower_components/font-awesome/fonts', {
+var fontAwesomeTree = new Funnel('bower_components/font-awesome/fonts', {
   srcDir: '/',
-  files: ['*'],
-  destDir: '/fonts'
+  include: ['**/*.woff', '**/stylesheet.css'],
+  destDir: 'fonts'
 });
 
-module.exports = mergeTrees([app.toTree(), fontAwesomeTree, glyphFontTree]);
+module.exports = mergeTrees([app.toTree(), glyphFontTree, fontAwesomeTree]);

@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.5",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.14.30",
+    "moment": "~2.10.3"
   }
 }
