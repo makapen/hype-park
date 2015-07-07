@@ -2,6 +2,10 @@
  margin: 0 auto;
 }
 
+.margin-t {
+  margin-top: 20px;
+}
+
 .circle {
   @extend .text-center;
   @extend .margin-center;

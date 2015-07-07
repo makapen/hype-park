@@ -12,11 +12,12 @@ Router.map(function() {
   });
   this.route('logout');
   this.route('login');
+  this.route('parking-map');
   this.route('parking-details');
+  this.route('create-or-login');
   this.route('review-parking-details');
   this.route('pay');
-  this.route('parking-map');
-  this.route('create-or-login');
+
 });
 
 export default Router;

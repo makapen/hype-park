@@ -6,7 +6,7 @@ export default Ember.Route.extend({
       this.transitionTo('create-or-login');
     },
     dateChanged: function(date) {
-      Ember.Logger.log('date', date)
+      // this.modelFor('parking-details').set('startDate', date);
     }
   }
 });
