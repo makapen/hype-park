@@ -1,9 +1,28 @@
+.pointer {
+  cursor: pointer;
+}
+
 .margin-center {
  margin: 0 auto;
 }
 
 .margin-t {
   margin-top: 20px;
+}
+
+.margin-b {
+  margin-bottom: 20px;
+}
+
+.margin-r {
+  margin-right: 10px;
+}
+.padding-sm-l {
+  padding-left: 5px;
+}
+
+.padding-sm-r {
+  padding-right: 5px;
 }
 
 .circle {

@@ -1,22 +1,70 @@
-  <div class='row'>
-    <div class='col-xs-12 col-md-3'>
-      <ol class="list-group">
-        <li class="list-group-item">
-          1st and Jackson
-          <span {{action 'spotSelected'}} class='pull-right'><i class='fa fa-car'></i></span>
-        </li>
-        <li class="list-group-item">
-          2nd and Yesler
-          <span {{action 'spotSelected'}} class='pull-right'><i class='fa fa-car'></i></span>
 
-        </li>
-        <li class="list-group-item">
-          3rd and James
-          <span {{action 'spotSelected'}} class='pull-right'><i class='fa fa-car'></i></span>
-        </li>
-      </ol>
-    </div>
-    <div class='col-xs-12 col-md-9'>
-      <img class='parking-map' alt='Parking Map'>
-    </div>
+<div class='parking-list'>
+
+  <div class="dropdown margin-t margin-b margin-r">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      {{currentFilter}}
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a class='pointer' {{action 'filterByDistance'}}>Distance</a></li>
+      <li><a class='pointer' {{action 'filterByPrice'}}>Price</a></li>
+    </ul>
   </div>
+
+  <ol class="parking-list-group">
+    {{#if filteredByDistance}}
+      <li class="parking-list-group-item">
+          <span>1st and Jackson</span>
+          <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
+          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+          <span class='pull-right padding-sm-r'>&#36;2.75</span>
+          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+          <span class='pull-right padding-sm-l padding-sm-r'>0.1 mi</span>
+      </li>
+      <li class="parking-list-group-item">
+        <span>2nd and Madison</span>
+        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
+        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+        <span class='pull-right padding-sm-r'>&#36;3.00</span>
+        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+        <span class='pull-right padding-sm-r'>0.2 mi</span>
+      </li>
+      <li class="parking-list-group-item">
+        <span>3rd and James</span>
+        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
+        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+        <span class='pull-right padding-sm-r'>&#36;2.5</span>
+        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+        <span class='pull-right padding-sm-r'>0.5 mi</span>
+      </li>
+    {{else}}
+      <li class="parking-list-group-item">
+        3rd and James
+        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
+        <span class='pull-right padding-sm-r'>0.5 mi</span>
+        <span class='pull-right padding-sm-r'>&#36;2.5</span>
+      </li>
+      <li class="parking-list-group-item">
+          <span>1st and Jackson</span>
+          <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
+          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+          <span class='pull-right padding-sm-r'>&#36;2.75</span>
+          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
+          <span class='pull-right padding-sm-l padding-sm-r'>0.1 mi</span>
+      </li>
+      <li class="parking-list-group-item">
+        2nd and Madison
+        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
+        <span class='pull-right padding-sm-r'>0.2 mi</span>
+        <span class='pull-right padding-sm-r'>&#36;3.00</span>
+
+      </li>
+    {{/if}}
+  </ol>
+</div>
+<div class='parking-map'>
+  <div class='parking-image'>
+  </div>
+</div>

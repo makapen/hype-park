@@ -19,13 +19,11 @@ app.import('bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-
 
 var glyphFontTree = new Funnel('bower_components/bootstrap-sass/assets/fonts/bootstrap', {
   srcDir: '/',
-  include: ['**/*.woff', '**/stylesheet.css'],
   destDir: 'fonts/bootstrap'
 });
 
 var fontAwesomeTree = new Funnel('bower_components/font-awesome/fonts', {
   srcDir: '/',
-  include: ['**/*.woff', '**/stylesheet.css'],
   destDir: 'fonts'
 });
 

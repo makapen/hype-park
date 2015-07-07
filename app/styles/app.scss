@@ -5,3 +5,13 @@
 @import '_utils';
 
 @import 'pages/_index';
+@import 'pages/_parking-map';
+
+html, body {
+  height: 100%;
+
+  // force ember containter to be height 100% as well
+  > div {
+    height: 100%;
+  }
+}
