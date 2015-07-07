@@ -1,14 +1,24 @@
+<div class='parking-details-map'>
+  <img class='parking-map-wide' src='/images/google-map-wide.png'>
+</div>
 
-<div>map</div>
-<div class='container'>
+<div class='container-fluid'>
   <div class='row'>
     <div class='col-xs-12 col-md-6'>
-      2nd and Jackson
+      <div class='margin-t text-center'>
+        <h4>2nd and Main</h4>
+        <div>
+          <span class='padding-sm-r'>&#36;3.00</span>
+          <span class='padding-sm-l padding-sm-r'>&#183;</span>
+          <span class='padding-sm-r'>0.2 mi</span>
+        </div>
+      </div>
     </div>
     <div class='col-xs-12 col-md-6'>
-      {{date-picker dateChanged='dateChanged'}}
-      <button class='btn btn-primary' {{action 'createOrLogin'}}>Submit Start Date</button>
-
+      <div class='margin-t'>
+        {{date-picker dateChanged='dateChanged'}}
+        <button class='btn btn-primary' {{action 'createOrLogin'}}>Submit Start Date</button>
+      </div>
     </div>
   </div>
 </div>

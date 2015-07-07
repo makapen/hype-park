@@ -1,0 +1,7 @@
+
+.parking-review {
+  @extend .clearfix;
+  float: left;
+  height: calc(100% - 70px);
+  width: 30%;
+}

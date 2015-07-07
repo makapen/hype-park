@@ -1,0 +1,10 @@
+.parking-map {
+  @extend .clearfix;
+  height: calc(100% - 70px);
+  width: 70%;
+}
+
+.parking-map-wide {
+  height: auto;
+  width: 100%;
+}

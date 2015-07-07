@@ -24,12 +24,6 @@
     border-bottom-right-radius: 0;
   }
 }
-.parking-map {
-  @extend .clearfix;
-  float: left;
-  height: calc(100% - 70px);
-  width: 70%;
-}
 
 .parking-image {
   height: 100%;

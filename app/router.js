@@ -18,6 +18,8 @@ Router.map(function() {
   this.route('review-parking-details');
   this.route('pay');
 
+  this.route('parking-spots');
+  this.route('profile');
 });
 
 export default Router;
