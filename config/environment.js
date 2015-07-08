@@ -37,7 +37,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authenticationRoute: 'login',
+    authenticationRoute: 'index',
     routeAfterAuthentication: 'index',
     // routeIfAlreadyAuthenticated: 'orders',
     crossOriginWhitelist: [],

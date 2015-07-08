@@ -18,19 +18,15 @@
         <li><a href="#">Partners</a></li>
         <li class="dropdown">
           {{#if session.isAuthenticated}}
-            <a {{action 'logout'}} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome back<span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome back<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#">Account</a></li>
               <li><a href="#">History</a></li>
               <li>{{#link-to 'logout'}}Logout{{/link-to}}</li>
             </ul>
           {{else}}
-            <a {{action 'signUp'}} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signup <span class="caret"></span></a>
+            <a {{action 'signUp'}} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signup / Login</a>
           {{/if}}
-          <ul class="dropdown-menu">
-            <li><a href="#">Account</a></li>
-            <li><a href="#">History</a></li>
-          </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
