@@ -1,20 +1,27 @@
 
-<div class='parking-review'>
-  <div class='margin-l margin-r margin-t'>
-    <h4>2nd and Main</h4>
-    <div>
-      <span>July 20<sup>th</sup>, 2015</span>
+<div class='divide30'></div>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12 col-md-4 col-md-offset-1'>
+      <div class='margin-l margin-r margin-t'>
+        <h3>Order Summary</h3>
+        <div><span>Order #1424124234</span></div>
+        <div><span>2nd and Main</span></div>
+        <div>
+          <span>July 20<sup>th</sup>, 2015</span>
+        </div>
+        <div>
+          <span class='padding-sm-r'>&#36;130.00 per Month</span>
+        </div>
+        <button class='btn btn-primary margin-t' {{action 'payParking'}}>Go pay</button>
+      </div>
     </div>
-    <div>
-      <span class='padding-sm-r'>&#36;130.00 per Month</span>
-      <span class='padding-sm-l padding-sm-r'>&#183;</span>
-      <span class='padding-sm-r'>0.2 mi</span>
-    </div>
-    <button class='btn btn-primary margin-t' {{action 'payParking'}}>Go pay</button>
-  </div>
-</div>
 
-<div class='parking-map pull-left'>
-  <div class='parking-image--selected'>
+    <div class='col-xs-12 col-md-4'>
+      <div class='parking-map--small pull-left margin-t'>
+        <div class='parking-image--selected'>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
