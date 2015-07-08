@@ -11,10 +11,11 @@ Router.map(function() {
     this.route('details');
   });
   this.route('logout');
-  this.route('login');
   this.route('parking-map');
   this.route('parking-details');
-  this.route('create-or-login');
+  this.route('create-or-login', function() {
+    this.route('login', { path: '/login'});
+  });
   this.route('review-parking-details');
   this.route('pay');
 

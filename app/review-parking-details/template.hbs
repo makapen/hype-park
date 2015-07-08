@@ -2,9 +2,15 @@
 <div class='divide30'></div>
 <div class='container-fluid'>
   <div class='row'>
-    <div class='col-xs-12 col-md-4 col-md-offset-1'>
+    <h2 class='text-center'>Order Summary</h2>
+    <div class='col-xs-12 col-md-6 col-md-offset-1'>
+      <div class='parking-map--small pull-left margin-t'>
+        <div class='parking-image--selected'>
+        </div>
+      </div>
+    </div>
+    <div class='col-xs-12 col-md-4'>
       <div class='margin-l margin-r margin-t'>
-        <h3>Order Summary</h3>
         <div><span>Order #1424124234</span></div>
         <div><span>2nd and Main</span></div>
         <div>
@@ -13,14 +19,7 @@
         <div>
           <span class='padding-sm-r'>&#36;130.00 per Month</span>
         </div>
-        <button class='btn btn-primary margin-t' {{action 'payParking'}}>Go pay</button>
-      </div>
-    </div>
-
-    <div class='col-xs-12 col-md-4'>
-      <div class='parking-map--small pull-left margin-t'>
-        <div class='parking-image--selected'>
-        </div>
+        <button class='btn btn-theme-bg btn-lg margin-t' {{action 'payParking'}}>Proceed To Checkout</button>
       </div>
     </div>
   </div>

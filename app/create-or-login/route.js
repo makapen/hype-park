@@ -3,29 +3,25 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-  beforeModel: function(transition) {
-    if (this.get('session.isAuthenticated')) {
-      transition.abort();
-      this.get('session').set('afterLogoutRedirect', window.location.href);
-      this.get('session').invalidate();
-      return;
-    }
-  },
-
   onAuthenticationPromise: function() {
     if (this.get('authenticationPromise')) {
-      this.get('authenticationPromise').then(function() {
-          this.send('activate');
-          this.set('authenticationPromise', null);
-        }.bind(this))
-        .catch(function() {
-          if (!this.get('session.isAuthenticated')) {
-            this.get('session').set('auth0Active', false);
-            this.transitionTo('sign-up.index');
-          }
-        }.bind(this));
+      this.get('authenticationPromise')
+      .then(function() {
+        if (this.get('session.attemptedTransition')) {
+          this.get('session.attemptedTransition').retry();
+        } else {
+          this.transitionTo('pay');
+        }
+      }.bind(this))
+      .catch(function() {
+        if (!this.get('session.isAuthenticated')) {
+          this.get('session').set('auth0Active', false);
+          this.transitionTo('index');
+        }
+      }.bind(this));
     }
   }.observes('authenticationPromise'),
+
   actions: {
     payParking: function() {
       this.transitionTo('review-parking-details');
@@ -50,43 +46,23 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       }
     },
     logIn: function() {
-      var self = this;
-
-      if (this.session.get('isAuthenticated')) {
-        self.send('activate');
-        return;
-      }
-
-      var signUpPromise = this.get('session')
+      var loginPromise = this.get('session')
         .authenticate('authenticator:auth0', {
-          setupCallback: function(auth0Lock) {
+          setupCallback: (auth0Lock) => {
+
             this.set('lock', auth0Lock);
-          }.bind(this)
+          }
         });
-
-      this.get('session').set('auth0Active', true);
-      this.transitionTo('sign-up.create-login');
-
-      this.set('authenticationPromise', signUpPromise);
+        this.set('authenticationPromise', loginPromise);
     },
     signUp: function() {
-      var self = this;
-
-      if (this.session.get('isAuthenticated')) {
-        self.send('activate');
-        return;
-      }
 
       var signUpPromise = this.get('session')
         .authenticate('authenticator:auth0-signup', {
-          setupCallback: function(auth0Lock) {
+          setupCallback: (auth0Lock) => {
             this.set('lock', auth0Lock);
-          }.bind(this)
+          }
         });
-
-      this.get('session').set('auth0Active', true);
-      this.transitionTo('sign-up.create-login');
-
       this.set('authenticationPromise', signUpPromise);
     },
     activate: function() {
