@@ -8,3 +8,16 @@
   height: auto;
   width: 100%;
 }
+
+.parking-image {
+  height: 100%;
+  width: 100%;
+  background: url('/images/google-map-cars.jpg') no-repeat;
+  background-size: cover;
+}
+
+.parking-image--selected {
+  @extend .parking-image;
+  background: url('/images/google-map-selected.jpg') no-repeat;
+  background-size: cover;
+}

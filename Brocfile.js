@@ -27,4 +27,7 @@ var fontAwesomeTree = new Funnel('bower_components/font-awesome/fonts', {
   destDir: 'fonts'
 });
 
-module.exports = mergeTrees([app.toTree(), glyphFontTree, fontAwesomeTree]);
+var scriptTree = new Funnel('vendor', {
+  srcDir: '/'
+})
+module.exports = mergeTrees([app.toTree(), glyphFontTree, fontAwesomeTree, scriptTree]);

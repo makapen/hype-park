@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : assan
     Author     : Design_mylife
     Description:assan multi-page for Multipurpose use
@@ -333,7 +333,7 @@ p.sub-text {
   height: 100%; }
 
 .no-padding.img-2 {
-  background: url(../img/showcase-2.jpg) scroll center no-repeat;
+  background: url('/images/showcase-2.jpg') scroll center no-repeat;
   background-size: cover;
   position: absolute;
   height: 100%; }
@@ -2517,7 +2517,7 @@ ol.breadcrumb li a {
 
 /***************about me*********************/
 .me-intro {
-  background: url(../img/showcase-2.jpg);
+  background: url('images/showcase-2.jpg');
   padding: 200px 0; }
 
 .me-intro h2 {
