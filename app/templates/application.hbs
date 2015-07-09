@@ -1,3 +1,12 @@
-{{partial 'topnav/default'}}
+{{#if controller.isIn}}
 
-{{outlet}}
+  {{partial 'topnav/default'}}
+
+  {{outlet}}
+{{else}}
+  <form  {{action 'submitPassword'}}>
+    <label>Enter password</label>
+    {{input value=controller.password}}
+    <button>Submit</button>
+  </form>
+{{/if}}
