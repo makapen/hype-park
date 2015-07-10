@@ -4,6 +4,8 @@
 @import 'libs/assan-theme/main';
 @import '_utils';
 
+@import 'variables/_break-points';
+
 @import 'components/_parking-map';
 @import 'components/_footer';
 @import 'components/_header';
@@ -14,6 +16,7 @@
 @import 'pages/_parking-details';
 @import 'pages/_parking-review';
 @import 'pages/_create-or-login';
+
 
 html, body {
   height: 100%;
