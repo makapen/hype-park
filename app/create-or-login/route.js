@@ -10,7 +10,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         if (this.get('session.attemptedTransition')) {
           this.get('session.attemptedTransition').retry();
         } else {
-          this.transitionTo('pay');
+          this.transitionTo('review-parking-details');
         }
       }.bind(this))
       .catch(function() {

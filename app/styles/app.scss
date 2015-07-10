@@ -2,9 +2,11 @@
 @import 'bower_components/font-awesome/scss/font-awesome.scss';
 @import 'bower_components/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build';
 @import 'libs/assan-theme/main';
+@import '_place-holders';
 @import '_utils';
 
 @import 'variables/_break-points';
+@import 'variables/_sizes';
 
 @import 'components/_parking-map';
 @import 'components/_footer';

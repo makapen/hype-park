@@ -3,7 +3,7 @@
   @extend .clearfix;
   float: left;
   height: calc(100% - 70px);
-  width: 30%;
+  width: $map-side-content-width;
 }
 
 .parking-list-group {
@@ -14,8 +14,52 @@
 .parking-list-group-item {
   @extend .list-group-item;
   @extend .clearfix;
-  // override bootstrap;
+
+  position: relative;
+  height: 80px;
+  width: $map-side-content-width;
+  overflow: hidden;
+  cursor: pointer;
+
+  .parking-details {
+    display: inline-block;
+    height: 100%;
+    width: calc(#{$map-side-content-width} - #{$angle-button-width} - 20px);
+    padding-right: 10px;
+    overflow: auto;
+  }
+
+  .angle-button {
+    position: relative;
+    display: inline-block;
+    width: $angle-button-width;
+    top: 50%;
+    @extend %transform50-prefixes;
+    vertical-align: middle;
+  }
+
+  .address {
+    display: inline-block;
+    width: 196px;
+    margin: 0;
+  }
+
+  .miles {
+    margin: 0;
+  }
+
+  .price {
+    display: inline-block;
+    width: 130px;
+    padding-left: 15px;
+    text-align: right;
+    line-height: 18px; //to match bootstrap header
+    vertical-align: top;
+  }
+  // override bootstrap rules
+  padding: 10px 0 10px 15px;
   border-right: 0;
+
   &:first-child {
     border-top-left-radius: 0;
     border-top-right-radius: 0;

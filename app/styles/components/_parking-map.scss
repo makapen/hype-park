@@ -1,7 +1,7 @@
 .parking-map {
   @extend .clearfix;
   height: calc(100% - 70px);
-  width: 70%;
+  width: calc(100% - #{$map-side-content-width});
 }
 
 .parking-map--small {

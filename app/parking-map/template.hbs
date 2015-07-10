@@ -2,6 +2,7 @@
 <div class='parking-list'>
 
   <div class="dropdown margin-t margin-b margin-r text-right">
+    <span>Sort By:</span>
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       {{currentFilter}}
       <span class="caret"></span>
@@ -15,54 +16,102 @@
 
   <ol class="parking-list-group">
     {{#if filteredByDistance}}
-      <li class="parking-list-group-item">
-          <span>1st and Jackson</span>
-          <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
-          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-          <span class='pull-right padding-sm-r'>&#36;127.50</span>
-          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-          <span class='pull-right padding-sm-l padding-sm-r'>0.1 mi</span>
+      <li class="parking-list-group-item" {{action 'spotSelected'}}>
+        <div class='parking-details'>
+          <div>
+            <h5 class='address'><strong>1. 1st and Jackson</strong></h5>
+            <div class='price'>
+              <span><strong>&#36;127.50/month</strong></span>
+            </div>
+          </div>
+          <div>
+            <span class='miles'>0.1 miles away</span>
+          </div>
+        </div>
+        <div class='angle-button'>
+          <i class='fa fa-angle-right fa-3x'></i>
+        </div>
       </li>
-      <li class="parking-list-group-item">
-        <span>2nd and Main</span>
-        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>&#36;130.00</span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>0.2 mi</span>
+      <li class="parking-list-group-item" {{action 'spotSelected'}}>
+        <div class='parking-details'>
+          <div>
+            <h5 class='address'><strong>2. 2nd and Main</strong></h5>
+            <div class='price'>
+              <span><strong>&#36;130.00/month</strong></span>
+            </div>
+          </div>
+          <div>
+            <span class='miles'>0.2 miles away</span>
+          </div>
+        </div>
+        <div class='angle-button'>
+          <i class='fa fa-angle-right fa-3x'></i>
+        </div>
       </li>
-      <li class="parking-list-group-item">
-        <span>3rd and James</span>
-        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>&#36;125.00</span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>0.5 mi</span>
+      <li class="parking-list-group-item" {{action 'spotSelected'}}>
+        <div class='parking-details'>
+          <div>
+            <h5 class='address'><strong>3. 3rd and James</strong></h5>
+            <div class='price'>
+              <span><strong>&#36;125.00/month</strong></span>
+            </div>
+          </div>
+          <div>
+            <span class='miles'>0.5 miles away</span>
+          </div>
+        </div>
+        <div class='angle-button'>
+          <i class='fa fa-angle-right fa-3x'></i>
+        </div>
       </li>
     {{else}}
-      <li class="parking-list-group-item">
-        <span>3rd and James</span>
-        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>&#36;125.00</span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>0.5 mi</span>
+      <li class="parking-list-group-item" {{action 'spotSelected'}}>
+        <div class='parking-details'>
+          <div>
+            <h5 class='address'><strong>1. 3rd and James</strong></h5>
+            <div class='price'>
+              <span><strong>&#36;125.00/month</strong></span>
+            </div>
+          </div>
+          <div>
+            <span class='miles'>0.5 miles away</span>
+          </div>
+        </div>
+        <div class='angle-button'>
+          <i class='fa fa-angle-right fa-3x'></i>
+        </div>
       </li>
-      <li class="parking-list-group-item">
-          <span>1st and Jackson</span>
-          <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
-          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-          <span class='pull-right padding-sm-r'>&#36;127.50</span>
-          <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-          <span class='pull-right padding-sm-l padding-sm-r'>0.1 mi</span>
+      <li class="parking-list-group-item" {{action 'spotSelected'}}>
+        <div class='parking-details'>
+          <div>
+            <h5 class='address'><strong>1. 1st and Jackson</strong></h5>
+            <div class='price'>
+              <span><strong>&#36;127.50/month</strong></span>
+            </div>
+          </div>
+          <div>
+            <span class='miles'>0.1 miles away</span>
+          </div>
+        </div>
+        <div class='angle-button'>
+          <i class='fa fa-angle-right fa-3x'></i>
+        </div>
       </li>
-      <li class="parking-list-group-item">
-        <span>2nd and Main</span>
-        <span {{action 'spotSelected'}} class='pointer pull-right'><i class='fa fa-car'></i></span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>&#36;130.00</span>
-        <span class='pull-right padding-sm-l padding-sm-r'>&#183;</span>
-        <span class='pull-right padding-sm-r'>0.2 mi</span>
+      <li class="parking-list-group-item" {{action 'spotSelected'}}>
+        <div class='parking-details'>
+          <div>
+            <h5 class='address'><strong>2. 2nd and Main</strong></h5>
+            <div class='price'>
+              <span><strong>&#36;130.00/month</strong></span>
+            </div>
+          </div>
+          <div>
+            <span class='miles'>0.2 miles away</span>
+          </div>
+        </div>
+        <div class='angle-button'>
+          <i class='fa fa-angle-right fa-3x'></i>
+        </div>
       </li>
     {{/if}}
   </ol>
