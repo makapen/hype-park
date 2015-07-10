@@ -6,42 +6,33 @@
     <div class="col-md-12 margin30 sky-form-columns">
       <!--sky form checkout-->
       <p class="margin20">Fill out this form to complete your order</p>
-      <form action="" id="checkout-form" class="sky-form">
+      <form id="checkout-form" class="sky-form" {{action 'purchaseSpot' on='submit'}}>
         <fieldset>
           <div class="row">
             <section class="col col-6">
               <label class="input">
                 <i class="icon-prepend fa fa-user"></i>
-                <input type="text" name="fname" placeholder="First name">
+                {{input type='text' value=model.firstName name='fname' placeholder='First Name'}}
               </label>
             </section>
             <section class="col col-6">
               <label class="input">
                 <i class="icon-prepend fa fa-user"></i>
-                <input type="text" name="lname" placeholder="Last name">
+                {{input type='text' value=model.lastName  name='lname' placeholder='Lastname Name'}}
+
               </label>
             </section>
           </div>
 
           <div class="row">
-            <section class="col col-6">
-              <label class="input">
-                <i class="icon-prepend fa fa-envelope"></i>
-                <input type="email" name="email" placeholder="E-mail">
-              </label>
-            </section>
             <section class="col col-6">
               <label class="input">
                 <i class="icon-prepend fa fa-phone"></i>
-                <input type="tel" name="phone" placeholder="Phone">
+                {{input type="tel" value=model.telephoneNumber name="phone" placeholder="Phone"}}
               </label>
             </section>
-          </div>
-        </fieldset>
 
-        <fieldset>
-          <div class="row">
-            <section class="col col-5">
+            <section class="col col-6">
               <label class="select">
                 <select name="country">
                   <option value="0" selected disabled>Country</option>
@@ -299,28 +290,27 @@
               </label>
             </section>
 
-            <section class="col col-4">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="row">
+            <section class="col col-6">
               <label class="input">
-                <input type="text" name="city" placeholder="City">
+              {{input type="text" value=model.city name="city" placeholder="City"}}
               </label>
             </section>
 
-            <section class="col col-3">
+            <section class="col col-6">
               <label class="input">
-                <input type="text" name="code" placeholder="Post code">
+                {{input type="text" value=model.postalCode name="code" placeholder="Post code"}}
               </label>
             </section>
           </div>
 
           <section>
             <label for="file" class="input">
-              <input type="text" name="address" placeholder="Address">
-            </label>
-          </section>
-
-          <section>
-            <label class="textarea">
-              <textarea rows="3" name="info" placeholder="Additional info"></textarea>
+              {{input type="text" value=model.address name="address" placeholder="Address"}}
             </label>
           </section>
         </fieldset>
@@ -386,7 +376,7 @@
         <hr>
         <div class="divide30"></div>
         <footer class="text-right">
-          <button {{action 'purchaseSpot'}} class="btn btn-theme-dark btn-lg">Book It</button>
+          <button type='submit' class="btn btn-theme-dark btn-lg">Book It</button>
         </footer>
       </form>
 
