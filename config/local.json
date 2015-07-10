@@ -1,7 +1,8 @@
 {
   "apiServer": {
     "protocol": "http://",
-    "host": "localhost:3000"
+    "host": "localhost:3000",
+    "accountProvision": "/api/account-provision"
   },
 
   "firebaseServer": {

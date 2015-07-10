@@ -1,6 +1,7 @@
 import Base from 'simple-auth/authenticators/base';
 import config from '../config/environment';
 import Ember from 'ember';
+import ajax from 'ic-ajax';
 
 var auth0Config = config['ember-cli-auth0-lock'];
 
@@ -65,6 +66,29 @@ export default Base.extend({
       });
     });
   },
+
+  //TODO refactor to use a promise, wasn't working before as promise for some reason
+  postAccountToServer: function() {
+    var auth0Id = this.get('accountProvisions.auth0Id');
+    var profileId = this.get('accountProvisions.profileId');
+    var email = this.get('accountProvisions.email');
+
+    return ajax(config.APP.apiServer.protocol + config.APP.apiServer.host + config.APP.apiServer.accountProvision, {
+      method: 'POST',
+      data: {
+        auth0Id: auth0Id,
+        profileId: profileId
+      }
+    })
+    .then ( () => {
+      return this.store.findById('account', profileId)
+      .then( (account) => {
+        account.set('email', email);
+        return account.save();
+      });
+    });
+  }.observes('accountProvisions'),
+
   authenticate: function(options) {
     var auth0Lock = new Auth0Lock(auth0Config.cid, auth0Config.domain, {
       cdn: auth0Config.cdnUrl
@@ -73,17 +97,33 @@ export default Base.extend({
     this.set('auth0Lock', auth0Lock);
 
     options = options || {};
+
     return this.getAuth0Token(options.setupCallback, options.existingToken)
-      .then(function(auth0Session) {
+      .then((auth0Session) => {
         return this.getFirebaseToken(auth0Session.token)
-          .then(function(firebaseSession) {
+          .then((firebaseSession) => {
+
+            // if it's a user signing up, trigger the post to the middleware
+            // to append the metadata to the auth0 profile
+            if (options.signUp) {
+              var auth0Id = auth0Session.profile.identities[0].user_id;
+              var email = auth0Session.profile.email;
+              var profileId = options.account.get('id') || null;
+
+              this.set('accountProvisions', {
+                auth0Id: auth0Id,
+                profileId: profileId,
+                email: email
+              })
+            }
+
             return {
               firebaseToken: firebaseSession.token,
               auth0Token: auth0Session.token,
               auth0Profile: auth0Session.profile
             };
           });
-      }.bind(this));
+      });
   },
   restore: function(data) {
     var self = this;

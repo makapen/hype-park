@@ -56,12 +56,15 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         this.set('authenticationPromise', loginPromise);
     },
     signUp: function() {
+      var account = this.store.createRecord('account');
 
       var signUpPromise = this.get('session')
         .authenticate('authenticator:auth0-signup', {
           setupCallback: (auth0Lock) => {
             this.set('lock', auth0Lock);
-          }
+          },
+          signUp: true,
+          account: account
         });
       this.set('authenticationPromise', signUpPromise);
     },

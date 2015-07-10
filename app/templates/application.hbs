@@ -1,4 +1,4 @@
-{{#if controller.isIn}}
+{{#if isIn}}
 
   {{partial 'topnav/default'}}
 
@@ -6,7 +6,7 @@
 {{else}}
   <form  {{action 'submitPassword'}}>
     <label>Enter password</label>
-    {{input value=controller.password}}
+    {{input value=password}}
     <button>Submit</button>
   </form>
 {{/if}}
