@@ -25,14 +25,20 @@
           </div>
 
           <div class="row">
-            <section class="col col-6">
+            <section class='col col-4'>
+              <label class="input">
+                <i class="icon-prepend fa fa-car"></i>
+                {{input type="text" value=model.plateNumber name="plateNumber" placeholder="License plate number"}}
+              </label>
+            </section>
+            <section class="col col-4">
               <label class="input">
                 <i class="icon-prepend fa fa-phone"></i>
                 {{input type="tel" value=model.telephoneNumber name="phone" placeholder="Phone"}}
               </label>
             </section>
 
-            <section class="col col-6">
+            <section class="col col-4">
               <label class="select">
                 <select name="country">
                   <option value="0" selected disabled>Country</option>

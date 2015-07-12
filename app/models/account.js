@@ -8,5 +8,6 @@ export default DS.Model.extend({
   postalCode: DS.attr('string'),
   address: DS.attr('string'),
   email: DS.attr('string'),
+  plateNumber: DS.attr('string'),
   parkingSpots: DS.hasMany('parking-spot', { async: true})
 });

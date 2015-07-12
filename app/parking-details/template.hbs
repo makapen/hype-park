@@ -12,7 +12,7 @@
       </div>
 
       <div class='garage-image'>
-        <img src='' alt='Garage'>
+        <img src='/images/garage.jpg' alt='Garage'>
       </div>
       <div class='margin-t'>
         <div class='parking-info'>
@@ -23,12 +23,24 @@
           <span>Parking Type:</span>
           <span>Indoor Garage</span>
         </div>
+        <div class='parking-info'>
+          <span>Access:</span>
+          <span>Gated Garage with key opener. In and out priviledges</span>
+        </div>
+        <div class='parking-info'>
+          <span>Amenities:</span>
+          <span>Wheelchair / stroller accessible. Staff onsite</span>
+        </div>
+        <div class='parking-info'>
+          <span>Vehicle max dimensions:</span>
+          <span>120” Max Height / 90” Max Width (fits a Dodge Caravan)</span>
+        </div>
       </div>
     </div>
     <div class='col-xs-12 col-sm-4'>
-      <div class='margin-t'>
+      <div class='margin-t starting-date'>
         <h4>Select Starting Date</h4>
-        {{date-picker name='publish-date' date=controller.startDate valueFormat='YYYY-MM-DD' classNames='form-control date-picker'}}
+        {{date-picker name='publish-date' date=controller.startDate valueFormat='YYYY-MM-DD'}}
         <div class='text-center'>
           <button class='btn btn-theme-bg btn-lg' {{action 'createOrLogin'}}>Book Now</button>
         </div>
