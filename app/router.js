@@ -21,6 +21,7 @@ Router.map(function() {
 
   this.route('parking-spots');
   this.route('profile');
+  this.route('about');
 });
 
 export default Router;
