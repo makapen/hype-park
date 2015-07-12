@@ -24,7 +24,7 @@ html, body {
   height: 100%;
 
   // force ember containter to be height 100% as well
-  > div {
+  > .ember-view {
     height: 100%;
   }
 }

@@ -32,7 +32,7 @@ module.exports = function(environment) {
     'script-src': "'self' http://cdn.auth0.com https://cdn.auth0.com/client/8qZq3onkqMlG83YQQBxFq75SzZ7V3qPm.js?t1436466639729", // Allow scripts from https://cdn.mxpnl.com
     'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     'connect-src': "'self' localhost:3000 wss://*.firebaseio.com https://hype-park.auth0.com https://hype-park.firebaseapp.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-    'img-src': "'self'",
+    'img-src': "*",
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'media-src': "'self'"
   };
