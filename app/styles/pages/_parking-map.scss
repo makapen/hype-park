@@ -35,7 +35,7 @@
     width: $angle-button-width;
     top: 50%;
     @extend %transform50-prefixes;
-    vertical-align: middle;
+    vertical-align: super;
   }
 
   .address {
