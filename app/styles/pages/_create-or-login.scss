@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   margin-top: 50px;
-  
+
   .center-line {
     vertical-align: middle;
     border-bottom: 1px solid #bbb;
@@ -12,8 +12,12 @@
 .create-header {
   margin-top: 20px;
   margin-bottom: 20px;
+  background-color: #DA7702;
+  color: white;
 }
 
 .login-header {
   margin-top: 20px;
+  background-color: #99C15D;
+  color: white;
 }

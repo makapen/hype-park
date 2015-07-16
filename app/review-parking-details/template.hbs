@@ -3,46 +3,23 @@
 <div class='container-fluid'>
   <div class='row'>
     <h2 class='text-center'>Order Summary</h2>
-    <div class='col-xs-12 col-md-6 col-md-offset-1'>
-      <div class='parking-map--small pull-left margin-t'>
+    <div class='col-xs-12 col-md-5'>
         <div class='parking-image--selected'>
         </div>
-      </div>
     </div>
-    <div class='col-xs-12 col-md-4'>
-      <div class='margin-l margin-r margin-t'>
-        <div>
+    <div class='col-xs-12 col-md-7'>
           <h4>Subscription</h4>
-          <span>1 Monthly Parking Spot at $125/month</span>
-          <br>
-          <span>Starting from 07/08/2015. Automated monthly extension on the 6th of each month unless cancelled.</span>
-        </div>
-        <div class='margin-t'>
+          <p>1 Monthly Parking Spot at $125/month <br>
+          Starting from 07/08/2015. Automated monthly extension on the 6th of each month unless cancelled.</p>
           <h4>Parking Address</h4>
-          <span>111 S Jackson Street</span>
-          <br>
-          <span>Seattle, WA, 98105</span>
-        </div>
-        <div class='margin-t'>
-          <h4>Order</h4>
-          <span>#1424124234</span>
-        </div>
-        <div class='margin-t'>
+          <p>111 S Jackson Street <br>
+          Seattle, WA, 98105</p>
           <h4>Delivery Address (key/monthly pass)</h4>
-          <span>234 S 4th av NE</span>
-          <br>
-          <span>Seattle, 98103, WA</span>
-        </div>
-        <div class='margin-t'>
+          <p>234 S 4th av NE<br>Seattle, 98103, WA</p>
           <h4>License Plate</h4>
-          <span><i class='fa fa-edit pointer padding-sm-r'></i>AMR4410</span>
-          <br>
-          <span>Seattle, 98103, WA</span>
-        </div>
-
-        <button class='btn btn-theme-bg btn-lg margin-t' {{action 'payParking'}}>Proceed To Checkout</button>
+          <p>AMR4410</p>
+        <button class='btn btn-theme-bg btn-lg margin-t btn-orange' {{action 'payParking'}}>Proceed To Checkout</button>
         <button class='btn btn-theme-bg btn-lg margin-t' {{action 'backToMap'}}>Back to Map</button>
       </div>
-    </div>
   </div>
 </div>

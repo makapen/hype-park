@@ -4,13 +4,34 @@
 }
 
 .garage-image {
-
-  img {
-    width: 300px;
-  }
+    width: 100%;
+    height: 200px;
+    background: url(/images/parking/parking-multi-storey-car-park.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .starting-date {
-  border: 1px solid black;
   padding: 10px;
+  background-color: #efefef;
+  margin-right: -15px;
+}
+.parking-spots-banner {
+  .fa {
+    font-size: 8px;
+    vertical-align: middle;
+  }
+  background-color: #5C534D;
+color:white;
+font-size: 18px;
+font-weight: 600;
+padding: 10px;
+margin: -10px;
+}
+
+.overflow {
+  overflow-y: scroll;
+  height: 373px;
 }
