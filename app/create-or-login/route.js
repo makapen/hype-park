@@ -10,7 +10,14 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         if (this.get('session.attemptedTransition')) {
           this.get('session.attemptedTransition').retry();
         } else {
-          this.transitionTo('review-parking-details');
+          // route a user signing up to create a profile
+          if (this.get('userSignUp')) {
+            this.set('userSignUp', false);
+            this.transitionTo('create-profile');
+          }
+          else {
+            this.transitionTo('review-parking-details');
+          }
         }
       }.bind(this))
       .catch(function() {
@@ -49,7 +56,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       var loginPromise = this.get('session')
         .authenticate('authenticator:auth0', {
           setupCallback: (auth0Lock) => {
-
             this.set('lock', auth0Lock);
           }
         });
@@ -67,6 +73,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
           account: account
         });
       this.set('authenticationPromise', signUpPromise);
+      this.set('userSignUp', true);
     },
     activate: function() {
       var inviteTokenVerificationPromise;
