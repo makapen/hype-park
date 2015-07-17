@@ -1,0 +1,11 @@
+{
+  "apiServer": {
+    "protocol": "https://",
+    "host": "hype-park.herokuapp.com",
+    "accountProvision": "/api/account-provision"
+  },
+
+  "firebaseServer": {
+    "host": "https://hype-park.firebaseio.com"
+  }
+}
