@@ -22,6 +22,9 @@ Router.map(function() {
   this.route('parking-spots');
   this.route('profile');
   this.route('about');
+  this.route('partners');
+  this.route('create-profile');
+  this.route('thank-you');
 });
 
 export default Router;

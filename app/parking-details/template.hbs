@@ -2,62 +2,62 @@
   <img class='parking-map-wide' src='/images/maps/google-map-wide.jpg'>
 </div>
 
-<div class='container-fluid'>
-  <div class='row'>
-    <div class='col-xs-12 col-sm-8'>
-      <div class="overflow">
-      <div class='margin-t'>
-        <h4>111 S Jackson St<br>Seattle, WA, 98105</h4>
-        <h5 class="underline"><strong>&#36;127.50/month</strong></h5>
-      </div>
+<div class='container-fluid parking-details-content'>
+  <div class='row full-h'>
+    <div class='col-xs-12 col-sm-8 full-h overflow-y'>
+      <div class="full-h">
+        <div class='margin-t'>
+          <h4>111 S Jackson St<br>Seattle, WA, 98105</h4>
+          <h5 class="underline"><strong>&#36;127.50/month</strong></h5>
+        </div>
 
-      <div class='garage-image'>
-      </div>
-      <div class='margin-t'>
-        <div class='parking-info'>
-          <span><strong>Weekly Hours:</strong></span>
-          <span>Monday to Sunday 24/7</span>
+        <div class='garage-image'>
         </div>
-        <div class='parking-info'>
-          <span><strong>Parking Type:</strong></span>
-          <span>Indoor Garage</span>
-        </div>
-        <div class='parking-info'>
-          <span><strong>Access:</strong></span>
-          <span>Gated Garage with key opener. In and out priviledges</span>
-        </div>
-        <div class='parking-info'>
-          <span><strong>Amenities:</strong></span>
-          <span>Wheelchair / stroller accessible. Staff onsite</span>
-        </div>
-        <div class='parking-info'>
-          <span><strong>Vehicle max dimensions:</strong></span>
-          <span>120” Max Height / 90” Max Width (fits a Dodge Caravan)</span>
+        <div class='margin-t'>
+          <div class='parking-info'>
+            <span><strong>Weekly Hours:</strong></span>
+            <span>Monday to Sunday 24/7</span>
+          </div>
+          <div class='parking-info'>
+            <span><strong>Parking Type:</strong></span>
+            <span>Indoor Garage</span>
+          </div>
+          <div class='parking-info'>
+            <span><strong>Access:</strong></span>
+            <span>Gated Garage with key opener. In and out priviledges</span>
+          </div>
+          <div class='parking-info'>
+            <span><strong>Amenities:</strong></span>
+            <span>Wheelchair / stroller accessible. Staff onsite</span>
+          </div>
+          <div class='parking-info'>
+            <span><strong>Vehicle max dimensions:</strong></span>
+            <span>120” Max Height / 90” Max Width (fits a Dodge Caravan)</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    <div class='col-xs-12 col-sm-4'>
-      <div class='starting-date'>
-        <div class="parking-spots-banner text-center">$127.50/month <i class="fa fa-circle"></i> 3 spots left</div>
+  <div class='col-xs-12 col-sm-4 full-h'>
+    <div class='starting-date full-h'>
+      <div class="parking-spots-banner text-center">$127.50/month <i class="fa fa-circle"></i> 3 spots left</div>
       <br>
-        <h4 class="margin-t text-center">Select Starting Date</h4>
-        <div class="form-group">
-          <label class="sr-only">Calendar</label>
-          <div class="input-group">
-            {{date-picker class='form-control'}}
-            <div class="input-group-addon"><i class='fa fa-calendar'></i></div>
-          </div>
-          </div>
-        <div class='text-center'>
-          <button class='btn btn-theme-bg btn-lg btn-orange' {{action 'createOrLogin'}}>Book Now</button>
+      <h4 class="margin-t text-center">Select Starting Date</h4>
+      <div class="form-group">
+        <label class="sr-only">Calendar</label>
+        <div class="input-group">
+          {{date-picker class='form-control'}}
+          <div class="input-group-addon"><i class='fa fa-calendar'></i></div>
         </div>
-        <div class='margin-t text-center'>
-          <br>
-          <h4>Contact Us</h4>
-          <h5><i class="fa fa-phone"></i> 206-489-8078 (9am to 5pm)</h5>
-          <h5><i class="fa fa-envelope"></i> support@hypepark.com</h5>
-        </div>
+      </div>
+      <div class='text-center'>
+        <button class='btn btn-theme-bg btn-lg btn-orange' {{action 'createOrLogin'}}>Book Now</button>
+      </div>
+      <div class='parking-contact-us'>
+        <br>
+        <h4>Contact Us</h4>
+        <h5><i class="fa fa-phone"></i> 206-489-8078 (9am to 5pm)</h5>
+        <h5><i class="fa fa-envelope"></i> support@hypepark.com</h5>
       </div>
     </div>
   </div>

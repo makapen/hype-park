@@ -29,6 +29,14 @@
   padding-right: 5px;
 }
 
+.full-h {
+  height: 100%;
+}
+
+.full-w {
+  width: 100%;
+}
+
 .circle {
   @extend .text-center;
   @extend .margin-center;
@@ -52,6 +60,11 @@
   @extend .circle;
   border: 1px solid blue;
 }
+
+.overflow-y {
+  overflow-y: auto;
+}
+
 .underline {
   border-bottom: 1px solid #ccc;
 }

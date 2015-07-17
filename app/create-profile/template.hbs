@@ -1,0 +1,90 @@
+<div class="divide60"></div>
+
+<div class="container">
+  <h3>Account Info</h3>
+  <div class="row">
+
+    <div class="col-md-12 margin30 sky-form-columns">
+      <!--sky form checkout-->
+      <form id="checkout-form" class="sky-form" {{action 'updateProfile' on='submit'}}>
+        <fieldset>
+          <div class="row">
+            <section class="col col-6">
+              <label class="input">
+                <i class="icon-prepend fa fa-user"></i>
+                {{input type='text' value=model.firstName name='fname' placeholder='First Name'}}
+              </label>
+            </section>
+            <section class="col col-6">
+              <label class="input">
+                <i class="icon-prepend fa fa-user"></i>
+                {{input type='text' value=model.lastName  name='lname' placeholder='Last Name'}}
+
+              </label>
+            </section>
+          </div>
+
+          <div class="row">
+            <section class="col col-4">
+              <label class="input">
+                <i class="icon-prepend fa fa-envelope"></i>
+                {{input type="email" value=model.email name="email" placeholder="E-mail"}}
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="input">
+                <i class="icon-prepend fa fa-phone"></i>
+                {{input type="tel" value=model.telephoneNumber name="phone" placeholder="Phone"}}
+              </label>
+            </section>
+          </div>
+        </fieldset>
+
+        <section>
+          <label for="file" class="input">
+            {{input type="text" value=model.address name="address" placeholder="Address"}}
+          </label>
+        </section>
+
+        <fieldset>
+          <div class="row">
+            <section class="col col-6">
+              <label class="input">
+              {{input type="text" value=model.city name="city" placeholder="City"}}
+              </label>
+            </section>
+
+            <section class="col col-6">
+              <label class="input">
+                {{input type="text" value=model.postalCode name="code" placeholder="Post code"}}
+              </label>
+            </section>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="row">
+        <section class='col col-6'>
+          <label class="input">
+            <i class="icon-prepend fa fa-car"></i>
+            {{input type="text" value=model.plateNumber name="plateNumber" placeholder="License plate number"}}
+          </label>
+        </section>
+        </div>
+      </fieldset>
+
+        <div class="divide30"></div>
+        <hr>
+        <div class="divide30"></div>
+        <footer class="text-right">
+          <button type='submit' class="btn btn-theme-dark btn-lg">Save</button>
+        </footer>
+      </form>
+
+      <!--sky form checkout end here-->
+    </div><!--products list columns end-->
+  </div>
+</div><!--shop columns container end-->
+
+
+<div class="divide60"></div>
+{{partial 'footer'}}
