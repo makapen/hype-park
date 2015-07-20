@@ -48,6 +48,10 @@ Install Firebase tools
 Deploy to firebase
 `firebase deploy`
 
+View the app at 
+`https://hype-park.firebaseapp.com/`
+
+Password is `turnips`
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
