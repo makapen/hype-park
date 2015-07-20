@@ -21,6 +21,10 @@
   overflow: hidden;
   cursor: pointer;
 
+  &:hover {
+    background-color: $hover;
+  }
+  
   .parking-details {
     display: inline-block;
     height: 100%;
