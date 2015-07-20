@@ -1,6 +1,6 @@
 <div class='parking-list'>
 
-  <div class="dropdown margin-t margin-b margin-r text-right">
+  <div class="dropdown margin-t margin-b margin-r">
     <span>Sort By:</span>
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       {{currentFilter}}
@@ -10,6 +10,18 @@
     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
       <li><a class='pointer' {{action 'filterByDistance'}}>Distance</a></li>
       <li><a class='pointer' {{action 'filterByPrice'}}>Price</a></li>
+    </ul>
+  </div>
+
+  <div class="dropdown margin-t margin-b margin-r text-right">
+    <span>Filter by:</span>
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+      <li><a class='pointer'>Indoor</a></li>
+      <li><a class='pointer'>Consierge</a></li>
     </ul>
   </div>
 
