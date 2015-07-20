@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   currentFilter: 'Distance',
   filteredByDistance: true,
-  
+
   observesFilter: function() {
     var whichFilter = this.get('filteredByDistance') ? 'Distance' : 'Price';
     this.set('currentFilter', whichFilter);

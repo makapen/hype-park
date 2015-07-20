@@ -1,17 +1,54 @@
-
 <div class='parking-list'>
 
-  <div class="dropdown margin-t margin-b margin-r text-right">
-    <span>Sort By:</span>
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      {{currentFilter}}
-      <span class="caret"></span>
-    </button>
+  <div class="dropdown margin-t margin-b margin-r padding-lg-l">
+    <div class='inline-b'>
+      <span>Sort By:</span>
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        {{currentFilter}}
+        <span class="caret"></span>
+      </button>
 
-    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-      <li><a class='pointer' {{action 'filterByDistance'}}>Distance</a></li>
-      <li><a class='pointer' {{action 'filterByPrice'}}>Price</a></li>
-    </ul>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a class='pointer' {{action 'filterByDistance'}}>Distance</a></li>
+        <li><a class='pointer' {{action 'filterByPrice'}}>Price</a></li>
+      </ul>
+    </div>
+    <div class='inline-b padding-sm-l'>
+      <span>Amenities</span>
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+        <li>
+          <div class='padding-md-l'>
+            <input type="checkbox" id='indoor'>
+            <label for='indor'>Indoor</label>
+          </div>
+        </li>
+        <li>
+          <div class='padding-md-l'>
+            <input type="checkbox" id='concierge'>
+            <label for='concierge'>Concerige</label>
+          </div>
+        </li>
+        <li>
+          <div class='padding-md-l'>
+            <input type="checkbox" id='surface'>
+            <label for='surface'>Surface Lot</label>
+          </div>
+        </li>
+        <li>
+          <div class='padding-md-l'>
+            <input type="checkbox" id='24'>
+            <label for='24'>24/7</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown margin-t margin-b margin-r padding-lg-l">
   </div>
 
   <ol class="parking-list-group">
@@ -19,98 +56,122 @@
       <li class="parking-list-group-item" {{action 'spotSelected'}}>
         <div class='parking-details'>
           <div>
-            <h5 class='address'><strong>1. 111 S Jackson</strong></h5>
+            <h5 class='address'>
+              <strong>1. 111 S Jackson</strong>
+            </h5>
             <div class='price'>
-              <span><strong>&#36;127.50/month</strong></span>
+              <span>
+                <strong>
+                  <span class="text-lg">&#36;127.50</span>/month</strong>
+              </span>
             </div>
           </div>
           <div>
             <span class='miles'>0.1 miles away</span>
+            <button class="btn btn-xs btn-green pull-right">Select</button>
           </div>
-        </div>
-        <div class='angle-button'>
-          <i class='fa fa-angle-right fa-2x'></i>
+
         </div>
       </li>
       <li class="parking-list-group-item" {{action 'spotSelected'}}>
         <div class='parking-details'>
           <div>
-            <h5 class='address'><strong>2. 135 S Jackson</strong></h5>
+            <h5 class='address'>
+              <strong>2. 135 S Jackson</strong>
+            </h5>
             <div class='price'>
-              <span><strong>&#36;130.00/month</strong></span>
+              <span>
+                <strong>
+                  <span class="text-lg">&#36;130.00</span>/month</strong>
+              </span>
             </div>
           </div>
           <div>
             <span class='miles'>0.2 miles away</span>
+            <button class="btn btn-xs btn-green pull-right">Select</button>
           </div>
-        </div>
-        <div class='angle-button'>
-          <i class='fa fa-angle-right fa-2x'></i>
+
         </div>
       </li>
       <li class="parking-list-group-item" {{action 'spotSelected'}}>
         <div class='parking-details'>
           <div>
-            <h5 class='address'><strong>3. 240 2nd Ave S</strong></h5>
+            <h5 class='address'>
+              <strong>3. 240 2nd Ave S</strong>
+            </h5>
             <div class='price'>
-              <span><strong>&#36;125.00/month</strong></span>
+              <span>
+                <strong>
+                  <span class="text-lg">&#36;125.00</span>/month</strong>
+              </span>
             </div>
           </div>
           <div>
             <span class='miles'>0.5 miles away</span>
+            <button class="btn btn-xs btn-green pull-right">Select</button>
           </div>
-        </div>
-        <div class='angle-button'>
-          <i class='fa fa-angle-right fa-2x'></i>
+
         </div>
       </li>
     {{else}}
       <li class="parking-list-group-item" {{action 'spotSelected'}}>
         <div class='parking-details'>
           <div>
-            <h5 class='address'><strong>1. 240 2nd Ave S</strong></h5>
+            <h5 class='address'>
+              <strong>1. 240 2nd Ave S</strong>
+            </h5>
             <div class='price'>
-              <span><strong>&#36;125.00/month</strong></span>
+              <span>
+                <strong>
+                  <span class="text-lg">&#36;125.00</span>/month</strong>
+              </span>
             </div>
           </div>
           <div>
             <span class='miles'>0.5 miles away</span>
+            <button class="btn btn-xs btn-green pull-right">Select</button>
           </div>
-        </div>
-        <div class='angle-button'>
-          <i class='fa fa-angle-right fa-2x'></i>
+
         </div>
       </li>
       <li class="parking-list-group-item" {{action 'spotSelected'}}>
         <div class='parking-details'>
           <div>
-            <h5 class='address'><strong>1. 111 S Jackson</strong></h5>
+            <h5 class='address'>
+              <strong>1. 111 S Jackson</strong>
+            </h5>
             <div class='price'>
-              <span><strong>&#36;127.50/month</strong></span>
+              <span>
+                <strong>
+                  <span class="text-lg">&#36;127.50</span>/month</strong>
+              </span>
             </div>
           </div>
           <div>
             <span class='miles'>0.1 miles away</span>
+            <button class="btn btn-xs btn-green pull-right">Select</button>
           </div>
-        </div>
-        <div class='angle-button'>
-          <i class='fa fa-angle-right fa-2x'></i>
+
         </div>
       </li>
       <li class="parking-list-group-item" {{action 'spotSelected'}}>
         <div class='parking-details'>
           <div>
-            <h5 class='address'><strong>2. 135 S Jackson</strong></h5>
+            <h5 class='address'>
+              <strong>2. 135 S Jackson</strong>
+            </h5>
             <div class='price'>
-              <span><strong>&#36;130.00/month</strong></span>
+              <span>
+                <strong>
+                  <span class="text-lg">&#36;130.00</span>/month</strong>
+              </span>
             </div>
           </div>
           <div>
             <span class='miles'>0.2 miles away</span>
+            <button class="btn btn-xs btn-green pull-right">Select</button>
           </div>
-        </div>
-        <div class='angle-button'>
-          <i class='fa fa-angle-right fa-2x'></i>
+
         </div>
       </li>
     {{/if}}
