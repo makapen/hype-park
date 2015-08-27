@@ -39,11 +39,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Build the ember dist folder with the deploy target environment variable set
-`deployTarget=development ember build`
-
 Install Firebase tools
 `npm install -g firebase-tools`
+
+Build the ember dist folder with the deploy target environment variable set
+`deployTarget=development ember build`
 
 Deploy to firebase
 `firebase deploy`
@@ -51,7 +51,7 @@ Deploy to firebase
 View the app at 
 `https://hype-park.firebaseapp.com/`
 
-Password is `turnips`
+Password is `HypePark!206`
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
