@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   actions: {
     submitPassword: function() {
       var password = this.get('password');
-      if (password === 'turnips') {
+      if (password === 'HypePark!206') {
         this.set('isIn', true);
       }
     }
