@@ -1,14 +1,14 @@
-{{#if isIn}}
+{{!-- {{#if isIn}} --}}
 
   {{partial 'topnav/default'}}
 
   {{outlet}}
-{{else}}
+{{!-- {{else}}
   <form  {{action 'submitPassword'}}>
     <label>Enter password</label>
     {{input value=password}}
     <button>Submit</button>
   </form>
-{{/if}}
+{{/if}} --}}
 
 {{ember-notify messageStyle='bootstrap'}}
