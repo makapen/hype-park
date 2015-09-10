@@ -178,6 +178,13 @@
   </ol>
 </div>
 <div class='parking-map pull-left'>
-  <div class='parking-image'>
-  </div>
+  {{google-map
+    lat=centerLat
+    lng=centerLng
+    alwaysAutoFitBounds=true
+    autoFitBounds=true
+    markers=markers
+    zoom=zoom
+    type='road'
+  }}
 </div>
