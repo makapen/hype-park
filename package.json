@@ -37,6 +37,7 @@
     "ember-data": "1.13.4",
     "ember-disable-proxy-controllers": "^0.7.0",
     "ember-export-application-global": "^1.0.2",
+    "ember-google-map": "git://github.com/tyleriguchi/ember-google-map.git#master",
     "ember-notify": "^4.0.1",
     "emberfire": "~1.5.0"
   },
