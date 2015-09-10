@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   currentFilter: 'Distance',
   filteredByDistance: true,
 
-  zoom: 17,
+  zoom: 15,
   centerLat: null,
   centerLng: null,
   markers: Ember.A([

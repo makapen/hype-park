@@ -5,13 +5,12 @@ export default Ember.Route.extend({
 
   beforeModel() {
     let address = this.get('session.address');
-    console.log('the address is', address);
     let formatAddress = address.replace(/\s/g, '+');
-    ajax({
+
+    return ajax({
       url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+formatAddress,
       method: 'get'
     }).then( (res) => {
-      console.log('res', res);
       var result = res.results[0];
       this.set('result', result);
     })
@@ -22,11 +21,9 @@ export default Ember.Route.extend({
   },
 
   setupController(controller, model) {
-    this._super(controller, model);
-    controller.set('result', this.get('result'));
     controller.set('centerLat', this.get('result.geometry.location.lat'));
-    controller.set('centerLong', this.get('result.geometry.location.long'));
-    console.log ('center lat', controller.get('centerLat'))
+    controller.set('centerLng', this.get('result.geometry.location.lng'));
+    this._super(controller, model);
   },
 
   actions: {
