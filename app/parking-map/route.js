@@ -25,8 +25,7 @@ export default Ember.Route.extend({
     this._super(controller, model);
     controller.set('result', this.get('result'));
     controller.set('centerLat', this.get('result.geometry.location.lat'));
-    controller.set('centerLong', this.get('result.geometry.location.long'));
-    console.log ('center lat is....', controller.get('centerLat'))
+    controller.set('centerLng', this.get('result.geometry.location.long'));
   },
 
   actions: {
