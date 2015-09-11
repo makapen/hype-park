@@ -3,9 +3,9 @@ import ajax from 'ic-ajax';
 
 export default Ember.Route.extend({
 
-  beforeModel() {
-    let address = this.get('session.address');
-    console.log('the address is', address);
+  beforeModel(transition) {
+    Ember.Logger.log('transition', transition)
+    let address = transition.queryParams.address;
     let formatAddress = address.replace(/\s/g, '+');
     ajax({
       url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+formatAddress,
