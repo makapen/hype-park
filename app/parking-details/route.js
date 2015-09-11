@@ -6,7 +6,8 @@ export default Ember.Route.extend({
   beforeModel(transition) {
     let selectedAddress = transition.queryParams.selectedAddress;
     let formatSelectedAddress = selectedAddress.replace(/\s/g, '+');
-    ajax({
+
+    return ajax({
       url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+formatSelectedAddress,
       method: 'get'
     }).then( (res) => {
