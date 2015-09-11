@@ -84,14 +84,14 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this.controllerFor('parking-map').set('addressLat', this.get('lat'));
     this.controllerFor('parking-map').set('addressLng', this.get('lng'));
-    
+
     this._super(controller, model);
   },
 
   actions: {
-    spotSelected: function(str) {
-      Ember.Logger.log('st', str)
-      this.transitionTo('parking-details');
+    spotSelected: function(selectedAddress) {
+      controller.set('selectedAddress', selectedAddress);
     }
+
   }
 });
