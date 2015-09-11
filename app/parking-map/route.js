@@ -3,8 +3,9 @@ import ajax from 'ic-ajax';
 
 export default Ember.Route.extend({
 
-  beforeModel() {
-    let address = this.get('session.address');
+  beforeModel(transition) {
+    Ember.Logger.log('transition', transition)
+    let address = transition.queryParams.address;
     let formatAddress = address.replace(/\s/g, '+');
 
     return ajax({
