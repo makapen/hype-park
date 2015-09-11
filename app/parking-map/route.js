@@ -29,8 +29,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    spotSelected: function() {
-      this.transitionTo('parking-details');
+    spotSelected: function(selectedAddress) {
+      controller.set('selectedAddress', selectedAddress);
     }
+
   }
 });
