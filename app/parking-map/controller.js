@@ -4,14 +4,29 @@ export default Ember.Controller.extend({
   currentFilter: 'Distance',
   filteredByDistance: true,
 
-  zoom: 15,
+  zoom: 10,
   centerLat: null,
   centerLng: null,
   markers: Ember.A([
     {
-      lat: 47.599018,
-      lng: -122.335178,
-      title: 'Galvanize'
+      lat: 47.599489 ,
+      lng: -122.330747,
+      title: 'Parking',
+      icon: 'images/parking_meter.png'
+    },
+
+    {
+      lat: 47.601989 ,
+      lng: -122.331727,
+      title: 'Parking',
+      icon: 'images/parking_meter.png'
+    },
+
+    {
+      lat: 47.600869  ,
+      lng: -122.333614,
+      title: 'Parking',
+      icon: 'images/parking_meter.png'
     }
   ]),
 
