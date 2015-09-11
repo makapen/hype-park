@@ -10,10 +10,20 @@ export default Ember.Route.extend({
       url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+formatSelectedAddress,
       method: 'get'
     }).then( (res) => {
-      console.log('res', res);
       var result = res.results[0];
-      this.set('selected address result', result);
+      this.set('result', result);
+      console.log('the selected address result ', result)
     })
+  },
+
+  model() {
+    return Ember.A([
+      {
+        lat: this.get('result.geometry.location.lat'),
+        lng: this.get('result.geometry.location.lng'),
+        title: 'Single Result'
+      }
+    ])
   },
 
   afterModel: function() {
@@ -23,8 +33,8 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
     controller.set('result', this.get('result'));
-    controller.set('centerLat', this.get('result.geometry.location.lat'));
-    controller.set('centerLng', this.get('result.geometry.location.lng'));
+    this.controllerFor('parking-details').set('addressLat', this.get('result.geometry.location.lat'))
+    this.controllerFor('parking-details').set('addressLng', this.get('result.geometry.location.lng'))
   },
 
   actions: {
