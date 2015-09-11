@@ -1,5 +1,16 @@
 <div class='parking-details-map'>
-  <img class='parking-map-wide' src='/images/maps/google-map-wide.jpg'>
+  <!-- <img class='parking-map-wide' src='/images/maps/google-map-wide.jpg'> -->
+  {{google-map
+    lat=centerLat
+    lng=centerLng
+    alwaysAutoFitBounds=true
+    autoFitBounds=true
+    markers=markers
+    zoom=zoom
+    type='road'
+    gopt_scrollwheel=false
+    class="parking-details-map"
+  }}
 </div>
 
 <div class='container-fluid parking-details-content'>
@@ -70,7 +81,7 @@
           <br>
           <h4>Contact Us</h4>
           <h5><i class="fa fa-phone"></i> 206-489-8078 (9am to 5pm)</h5>
-          <h5><i class="fa fa-envelope"></i> <a href="mailto:support@hypepark.com">support@hypepark.com</a></h5>    
+          <h5><i class="fa fa-envelope"></i> <a href="mailto:support@hypepark.com">support@hypepark.com</a></h5>
         </div>
       </div>
     </div>
