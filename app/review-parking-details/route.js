@@ -9,13 +9,13 @@ export default Ember.Route.extend({
       return account;
     });
   },
-  
+
   actions: {
     payParking: function() {
       this.transitionTo('pay');
     },
-    backToMap: function() {
-      this.transitionTo('parking-map');
+    cancel: function() {
+      this.transitionTo('index');
     }
   }
 });
