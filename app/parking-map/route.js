@@ -1,6 +1,10 @@
 import Ember from 'ember';
 import ajax from 'ic-ajax';
 
+var demoMarker = Ember.Object.extend({
+
+});
+
 export default Ember.Route.extend({
   getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
     var R = 3959; // Radius of the earth in km
@@ -25,7 +29,7 @@ export default Ember.Route.extend({
 
     try {
       address = transition.queryParams.address;
-      formatAddress = address.replace(/\s/g, '+');
+      formatAddress = encodeURIComponent(address);
     }
 
     catch(e) {
@@ -48,8 +52,9 @@ export default Ember.Route.extend({
       Ember.Object.create({
         lat: 47.599006,
         lng: -122.333879,
-        title: 'Parking',
-        icon: 'images/parking_marker.png',
+        isClickable: true,
+        markerHasInfoWindow: false,
+        icon: 'images/parking_marker_green.png',
         price: 130,
         address: '111 South Jackson Street',
         description: 'Park right next to Galvanize!',
@@ -58,8 +63,10 @@ export default Ember.Route.extend({
       Ember.Object.create({
         lat: 47.597708 ,
         lng: -122.332029,
-        title: 'Parking',
-        icon: 'images/parking_marker.png',
+        isClickable: true,
+        markerController: 'ParkingSpotController',
+        markerHasInfoWindow: false,
+        icon: 'images/parking_marker_green.png',
         price: 145,
         address: 'Century Link Field',
         description: 'Front row parking for games',
@@ -69,8 +76,10 @@ export default Ember.Route.extend({
       Ember.Object.create({
         lat: 47.601572,
         lng: -122.331251,
-        title: 'Parking',
-        icon: 'images/parking_marker.png',
+        isClickable: true,
+        markerHasInfoWindow: false,
+        markerController: 'ParkingSpotController',
+        icon: 'images/parking_marker_green.png',
         price: 160,
         address: 'Seattle Downtown Services',
         description: 'Close walk to Il Corvo',
@@ -98,8 +107,15 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    spotSelected: function(selectedAddress) {
-      controller.set('selectedAddress', selectedAddress);
+    spotSelected: function(spot) {
+      this.transitionTo('parking-details', {
+        queryParams: {
+          address: this.get('address'),
+          addressLat: this.get('addressLat'),
+          addressLng: this.get('addressLng'),
+          spot: JSON.stringify(spot)
+        }
+      });
     }
 
   }

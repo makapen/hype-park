@@ -1,13 +1,26 @@
 import ajax from 'ic-ajax';
 import Ember from 'ember';
 
+var parkingSpotMarker =  Ember.Object.extend({
+  isClickable: true,
+  markerHasInfoWindow: false,
+  icon: 'images/parking_marker_green.png'
+})
+
 export default Ember.Route.extend({
   model(params, transition) {
-    return JSON.parse(transition.queryParams.spot);
+    var spotParams =  JSON.parse(transition.queryParams.spot);
+    return parkingSpotMarker.create(spotParams);
   },
 
   afterModel: function() {
     return this.loadGoogleMap();
+  },
+
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    controller.set('lat', model.lat);
+    controller.set('lng', model.lng);
   },
 
 

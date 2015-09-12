@@ -1,10 +1,11 @@
 <div class='parking-details-map'>
   <!-- <img class='parking-map-wide' src='/images/maps/google-map-wide.jpg'> -->
   {{google-map
-    alwaysAutoFitBounds=true
-    autoFitBounds=true
+    lat=lat
+    lng=lng
     markers=markers
     zoom=zoom
+    markerHasInfoWindow=false
     type='road'
     gopt_scrollwheel=false
     class="parking-details-map"

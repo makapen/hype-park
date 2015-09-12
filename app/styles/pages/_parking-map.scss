@@ -16,7 +16,7 @@
   @extend .clearfix;
 
   position: relative;
-  height: 80px;
+  min-height: 80px;
   width: $map-side-content-width;
   overflow: hidden;
   cursor: pointer;
@@ -24,7 +24,7 @@
   &:hover {
     background-color: $hover;
   }
-  
+
   .parking-details {
     display: inline-block;
     height: 100%;

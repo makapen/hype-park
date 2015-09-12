@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  queryParams: ['address', 'addressLat', 'addressLng', 'selectedAddress', 'spot'],
+  queryParams: ['address', 'selectedAddress', 'spot'],
 
   // google map options
   zoom: 12,
@@ -32,16 +32,7 @@ export default Ember.Controller.extend({
   }),
 
   actions: {
-    spotSelected: function(spot) {
-      this.transitionToRoute('parking-details', {
-        queryParams: {
-          address: this.get('address'),
-          addressLat: this.get('addressLat'),
-          addressLng: this.get('addressLng'),
-          spot: JSON.stringify(spot)
-        }
-      });
-    },
+
     filterByDistance: function() {
       this.set('filteredByDistance', true);
       this.set('filteredByPrice', false);
