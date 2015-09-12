@@ -14,7 +14,15 @@ export default Ember.Route.extend({
     updateProfile: function() {
       this.modelFor('create-profile').save()
       .then( () => {
-        this.transitionTo('review-parking-details');
+        this.transitionTo('review-parking-details', {
+          queryParams: {
+            address: this.controllerFor('create-profile').get('address'),
+            addressLat: this.controllerFor('create-profile').get('addressLat'),
+            addressLng: this.controllerFor('create-profile').get('addressLng'),
+            selectedAddress: this.controllerFor('create-profile').get('selectedAddress'),
+            spot: this.controllerFor('create-profile').get('spot')
+          }
+        });
       })
     }
   }

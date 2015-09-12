@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
 
   actions: {
     spotSelected: function(spot) {
-      this.transitionTo('parking-details', {
+      this.transitionToRoute('parking-details', {
         queryParams: {
           address: this.get('address'),
           addressLat: this.get('addressLat'),

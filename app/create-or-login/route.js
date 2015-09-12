@@ -13,10 +13,26 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
           // route a user signing up to create a profile
           if (this.get('userSignUp')) {
             this.set('userSignUp', false);
-            this.transitionTo('create-profile');
+            this.transitionTo('create-profile', {
+              queryParams: {
+                address: this.controllerFor('create-or-login').get('address'),
+                addressLat: this.controllerFor('create-or-login').get('addressLat'),
+                addressLng: this.controllerFor('create-or-login').get('addressLng'),
+                selectedAddress: this.controllerFor('create-or-login').get('selectedAddress'),
+                spot: this.controllerFor('create-or-login').get('spot')
+              }
+            });
           }
           else {
-            this.transitionTo('review-parking-details');
+            this.transitionTo('review-parking-details', {
+              queryParams: {
+                address: this.controllerFor('create-or-login').get('address'),
+                addressLat: this.controllerFor('create-or-login').get('addressLat'),
+                addressLng: this.controllerFor('create-or-login').get('addressLng'),
+                selectedAddress: this.controllerFor('create-or-login').get('selectedAddress'),
+                spot: this.controllerFor('create-or-login').get('spot')
+              }
+            });
           }
         }
       }.bind(this))
