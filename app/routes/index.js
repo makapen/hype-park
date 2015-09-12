@@ -6,6 +6,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
     submitAddress: function() {
       this.transitionTo('parking-map');
+      this.set('session.address', this.controllerFor('index').get('address'));
     }
   }
 });

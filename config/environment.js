@@ -27,7 +27,7 @@ module.exports = function(environment) {
     },
     googleMap: {
       lazyLoad: true,
-      libraries: ['places']
+      libraries: ['geocoder']
     }
   };
 
@@ -35,7 +35,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self'  *.googleapis.com maps.gstatic.com http://cdn.auth0.com https://cdn.auth0.com/client/8qZq3onkqMlG83YQQBxFq75SzZ7V3qPm.js?t1436466639729", // Allow scripts from https://cdn.mxpnl.com
     'font-src': "'self' http://fonts.gstatic.com fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-    'connect-src': "'self' localhost:3000 maps.gstatic.com wss://*.firebaseio.com https://hype-park.auth0.com https://hype-park.firebaseapp.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+    'connect-src': "'self' localhost:3000 maps.gstatic.com  maps.googleapis.com wss://*.firebaseio.com https://hype-park.auth0.com https://hype-park.firebaseapp.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
     'img-src': "* *.googleapis.com maps.gstatic.com csi.gstatic.com",
     'frame-src': "'self' https://docs.google.com",
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com fonts.googleapis.com maps.gstatic.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com

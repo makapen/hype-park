@@ -1,9 +1,12 @@
 .parking-details-map {
-  width: 100%;
-  height: auto;
+  .map-canvas {
+    height: 300px!important;
+    width: 100% !important;
+  }
 }
 
 .parking-details-content{
+  margin-top: 300px;
   height: calc(100% - 270px); // minus the height of the header and map
 }
 .garage-image {

@@ -25,3 +25,10 @@
   background: url('/images/maps/google-map-selected.jpg') no-repeat;
   background-size: cover;
 }
+
+// overwritting inline-styling
+.map-canvas {
+  position: absolute !important;
+  width: calc(100% - 380px) !important;
+  height: calc(100% - 50px) !important;
+}
