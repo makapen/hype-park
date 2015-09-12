@@ -52,129 +52,29 @@
   </div>
 
   <ol class="parking-list-group">
-    {{#if filteredByDistance}}
-    <li class="parking-list-group-item" {{action 'spotSelected' '111 S Jackson St. Seattle WA'}}>
-        <div class='parking-details'>
-          <div>
-            <h5 class='address'>
-              <strong>1. 111 S Jackson</strong>
-            </h5>
-            <div class='price'>
-              <span>
-                <strong>
-                  <span class="text-lg">&#36;127.50</span>/month</strong>
-              </span>
+    {{#each sortedModel as |spot index|}}
+      {{#unless spot.isSelected}}
+        <li class="parking-list-group-item" {{action 'spotSelected' spot}}>
+          <div class='parking-details'>
+            <div>
+              <h5 class='address'>
+                <strong>{{convert-index index}}. {{spot.address}}</strong>
+              </h5>
+              <div class='price'>
+                <span>
+                  <strong>
+                    <span class="text-lg">&#36;{{spot.price}}</span>/month</strong>
+                </span>
+              </div>
+            </div>
+            <div>
+              <span class='miles'>{{spot.distance}} miles away</span>
+              <button class="btn btn-xs btn-green pull-right">Select</button>
             </div>
           </div>
-          <div>
-            <span class='miles'>0.1 miles away</span>
-            <button class="btn btn-xs btn-green pull-right">Select</button>
-          </div>
-
-        </div>
-      </li>
-      <li class="parking-list-group-item" {{action 'spotSelected' '135 S Jackson St. Seattle WA'}}>
-        <div class='parking-details'>
-          <div>
-            <h5 class='address'>
-              <strong>2. 135 S Jackson</strong>
-            </h5>
-            <div class='price'>
-              <span>
-                <strong>
-                  <span class="text-lg">&#36;130.00</span>/month</strong>
-              </span>
-            </div>
-          </div>
-          <div>
-            <span class='miles'>0.2 miles away</span>
-            <button class="btn btn-xs btn-green pull-right">Select</button>
-          </div>
-
-        </div>
-      </li>
-      <li class="parking-list-group-item" {{action 'spotSelected' '240 S Jackson St. Seattle WA'}}>
-        <div class='parking-details'>
-          <div>
-            <h5 class='address'>
-              <strong>3. 240 2nd Ave S</strong>
-            </h5>
-            <div class='price'>
-              <span>
-                <strong>
-                  <span class="text-lg">&#36;125.00</span>/month</strong>
-              </span>
-            </div>
-          </div>
-          <div>
-            <span class='miles'>0.5 miles away</span>
-            <button class="btn btn-xs btn-green pull-right">Select</button>
-          </div>
-
-        </div>
-      </li>
-    {{else}}
-    <li class="parking-list-group-item" {{action 'spotSelected' '240 S Jackson St. Seattle WA'}}>
-        <div class='parking-details'>
-          <div>
-            <h5 class='address'>
-              <strong>1. 240 2nd Ave S</strong>
-            </h5>
-            <div class='price'>
-              <span>
-                <strong>
-                  <span class="text-lg">&#36;125.00</span>/month</strong>
-              </span>
-            </div>
-          </div>
-          <div>
-            <span class='miles'>{{distance1}} miles away</span>
-            <button class="btn btn-xs btn-green pull-right">Select</button>
-          </div>
-
-        </div>
-      </li>
-      <li class="parking-list-group-item" {{action 'spotSelected' '111 S Jackson St. Seattle WA'}}>
-        <div class='parking-details'>
-          <div>
-            <h5 class='address'>
-              <strong>1. 111 S Jackson</strong>
-            </h5>
-            <div class='price'>
-              <span>
-                <strong>
-                  <span class="text-lg">&#36;127.50</span>/month</strong>
-              </span>
-            </div>
-          </div>
-          <div>
-            <span class='miles'>{{distance2}} miles away</span>
-            <button class="btn btn-xs btn-green pull-right">Select</button>
-          </div>
-
-        </div>
-      </li>
-      <li class="parking-list-group-item" {{action 'spotSelected' '135 S Jackson St. Seattle WA'}}>
-        <div class='parking-details'>
-          <div>
-            <h5 class='address'>
-              <strong>2. 135 S Jackson St.</strong>
-            </h5>
-            <div class='price'>
-              <span>
-                <strong>
-                  <span class="text-lg">&#36;130.00</span>/month</strong>
-              </span>
-            </div>
-          </div>
-          <div>
-            <span class='miles'>{{distance3}} miles away</span>
-            <button class="btn btn-xs btn-green pull-right">Select</button>
-          </div>
-
-        </div>
-      </li>
-    {{/if}}
+        </li>
+      {{/unless}}
+    {{/each}}
   </ol>
 </div>
 <div class='parking-map pull-left'>

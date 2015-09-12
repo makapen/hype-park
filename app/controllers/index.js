@@ -5,9 +5,10 @@ export default Ember.Controller.extend({
 
   actions: {
     submitAddress: function() {
-      this.transitionTo('parking-map', {
+      this.set('address', this.get('setAddress'))
+      this.transitionToRoute('parking-map', {
         queryParams: {
-          address: this.get('address')
+          address: this.get('setAddress')
         }
       });
     }

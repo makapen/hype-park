@@ -1,13 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ['selectedAddress', 'addressLat', 'addressLng'],
+  queryParams: ['address', 'addressLat', 'addressLng', 'selectedAddress', 'spot'],
+
   currentFilter: 'Distance',
   filteredByDistance: true,
   selectedAddress: null,
 
-  zoom: 20,
-  markers: Ember.computed.alias('model'),
+  zoom: 12,
+  markers: Ember.computed('model', function() {
+    return Ember.A([this.get('model')]);
+  }),
 
   actions: {
 

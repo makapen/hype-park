@@ -10,9 +10,11 @@
 
     <div class='row'>
       <div class='col-xs-10 col-xs-offset-1 text-center'>
-        <label for="address" class='sr-only'>Address</label>
-        {{input type="text" class="form-control" value=address placeholder="Where do you want to park?"}}
-        <button class='btn btn-theme-bg btn-lg text-center margin-t' {{action 'submitAddress'}}>submit</button>
+        <form {{action 'submitAddress' on='submit'}}>
+          <label for="address" class='sr-only'>Address</label>
+          {{input type="text" class="form-control" value=setAddress placeholder="Where do you want to park?"}}
+          <button class='btn btn-theme-bg btn-lg text-center margin-t' type='submit'>submit</button>
+        </form>
       </div>
     </div>
   </div>
