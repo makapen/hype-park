@@ -25,6 +25,7 @@ Router.map(function() {
   this.route('partners');
   this.route('create-profile');
   this.route('thank-you');
+  this.route('invalid-address');
 });
 
 export default Router;
