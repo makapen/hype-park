@@ -45,7 +45,15 @@ export default Ember.Route.extend({
       this.set('address', address);
       this.set('lat', result.geometry.location.lat);
       this.set('lng', result.geometry.location.lng);
-      this.set('zipCode', result.address_components[7].long_name);
+
+      let zipCode = result.address_components.find( (address) => {
+        if (address.types[0] === 'postal_code') {
+          return address;
+        }
+      })
+
+      console.log('ip', zipCode)
+      this.set('zipCode', zipCode.long_name);
     })
   },
 
@@ -106,7 +114,11 @@ export default Ember.Route.extend({
     })
 
     if (Ember.isBlank(hasZipCode)) {
-      this.transitionTo('invalid-address');
+      this.transitionTo('invalid-address', {
+        queryParams: {
+          zipCode: this.get('zipCode')
+        }
+      });
     }
 
     return this.loadGoogleMap();
