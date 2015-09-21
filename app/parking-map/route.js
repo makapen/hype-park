@@ -41,9 +41,11 @@ export default Ember.Route.extend({
       method: 'get'
     }).then( (res) => {
       var result = res.results[0];
+      console.log('res', result)
       this.set('address', address);
       this.set('lat', result.geometry.location.lat);
       this.set('lng', result.geometry.location.lng);
+      this.set('zipCode', result.address_components[7].long_name);
     })
   },
 
@@ -58,6 +60,7 @@ export default Ember.Route.extend({
         price: 130,
         address: '111 South Jackson Street',
         description: 'Park right next to Galvanize!',
+        zipCode: '98104',
         distance: this.getDistanceFromLatLonInKm(this.get('lat'), this.get('lng'), 47.599489, -122.330747)
       }),
       Ember.Object.create({
@@ -70,6 +73,7 @@ export default Ember.Route.extend({
         price: 145,
         address: 'Century Link Field',
         description: 'Front row parking for games',
+        zipCode: '98104',
         distance: this.getDistanceFromLatLonInKm(this.get('lat'), this.get('lng'), 47.601989 , -122.331727)
       }),
 
@@ -83,6 +87,7 @@ export default Ember.Route.extend({
         price: 160,
         address: 'Seattle Downtown Services',
         description: 'Close walk to Il Corvo',
+        zipCode: '98104',
         distance: this.getDistanceFromLatLonInKm(this.get('lat'), this.get('lng'), 47.600869, -122.333614)
       }),
 
@@ -95,7 +100,15 @@ export default Ember.Route.extend({
     ])
   },
 
-  afterModel: function() {
+  afterModel: function(parkingSpots) {
+    var hasZipCode = parkingSpots.find( (item, index) => {
+      return item.get('zipCode') === this.get('zipCode');
+    })
+
+    if (Ember.isBlank(hasZipCode)) {
+      this.transitionTo('invalid-address');
+    }
+
     return this.loadGoogleMap();
   },
 
