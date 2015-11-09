@@ -102,6 +102,7 @@ export default Ember.Route.extend({
         lat: this.get('lat'),
         lng: this.get('lng'),
         title: 'Parking',
+        isClickable: false,
         isSelected: true
       })
     ])
